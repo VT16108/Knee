@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediScan AI - Knee Diagnostics</title>
+    
+    <!-- Importing a clean font (Inter) and Icons (FontAwesome) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- =========================================
+         HEADER SECTION
+         ========================================= -->
+    <header class="main-header">
+        <div class="header-left">
+            <!-- Hamburger Menu Button -->
+            <button class="menu-toggle-btn" id="openSidebarBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- Logo -->
+            <div class="logo-text">Medi<span>Scan</span></div>
+        </div>
+
+        <div class="header-right">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search conditions, doctors...">
+            </div>
+            <!-- Login Button -->
+            <button class="login-btn">Login</button>
+        </div>
+    </header>
+
+    <!-- =========================================
+         SIDEBAR MENU (Hidden by default)
+         ========================================= -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <nav class="sidebar-menu" id="sidebarMenu">
+        <button class="close-sidebar-btn" id="closeSidebarBtn">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        
+        <ul class="sidebar-nav-links">
+            <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i> How It Works</a></li>
+            <li><a href="#"><i class="fa-solid fa-hospital"></i> Hospitals</a></li>
+            <li><a href="#"><i class="fa-solid fa-file-lines"></i> Resources</a></li>
+            <li><a href="#"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+            <li><a href="#"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- =========================================
+         MAIN CONTENT AREA
+         ========================================= -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-text-content">
+                <h1 class="hero-title">AI-Powered Knee Diagnostics</h1>
+                <p class="hero-subtitle">Upload CT scans for instant analysis and compare Government vs Private hospital pathways.</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn-primary">Upload CT Scan</button>
+                    <button class="btn-secondary">View Hospitals</button>
+                </div>
+            </div>
+            
+            <!-- The image is now positioned absolutely to act as a large background element -->
+            <img src="knee_img.png" alt="3D Medical Knee Scan" class="hero-knee-image">
+            </div>
+        </section>
+
+        <!-- Feature Cards Section (Overlaps the bottom of the hero) -->
+        <section class="features-section">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
+                <h3 class="feature-title">CT Analysis</h3>
+                <p class="feature-description">CT analysis is happening through a model build using deep learning from scratch.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <h3 class="feature-title">Gov vs Private Comparison</h3>
+                <p class="feature-description">Side-by-side cost, wait time, surgeon rating & success rate metrics.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                <h3 class="feature-title">Live Wait Times</h3>
+                <p class="feature-description">Check doctor availability and book appointments instantly.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
