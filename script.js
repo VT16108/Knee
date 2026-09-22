@@ -286,11 +286,121 @@ function showUploadedFile(
         </div>
 
 
+                <!-- ============================== -->
+        <!-- PATIENT INFORMATION -->
+        <!-- ============================== -->
+
         <div style="
-            color: #2563EB;
-            font-weight: 600;
+            border-top: 1px solid #E2E8F0;
+            margin-top: 15px;
+            padding-top: 15px;
         ">
-            Ready for AI analysis
+
+            <h3 style="
+                margin-bottom: 15px;
+                font-size: 16px;
+            ">
+                Patient Information
+            </h3>
+
+
+            <!-- PATIENT NAME -->
+
+            <label style="
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 600;
+            ">
+                Patient Name
+            </label>
+
+            <input
+                type="text"
+                id="patientName"
+                placeholder="Enter patient name"
+                style="
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 12px;
+                    border: 1px solid #CBD5E1;
+                    border-radius: 7px;
+                "
+            >
+
+
+            <!-- DATE OF OPERATION -->
+
+            <label style="
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 600;
+            ">
+                Date of Operation
+            </label>
+
+            <input
+                type="date"
+                id="operationDate"
+                max="${new Date().toISOString().split('T')[0]}"
+                style="
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 12px;
+                    border: 1px solid #CBD5E1;
+                    border-radius: 7px;
+                "
+            >
+
+
+            <!-- STUDY INSTANCE UID -->
+
+            <label style="display:block;font-weight:600;margin-bottom:6px;">
+                StudyInstanceUID
+            </label>
+
+            <input
+                type="text"
+                id="studyInstanceUID"
+                placeholder="e.g. 1.2.826.0.1.3680043.8.498.100048732290990538690933"
+                style="
+                    width:100%;
+                    padding:10px;
+                    margin-bottom:5px;
+                    border:1px solid #CBD5E1;
+                    border-radius:7px;
+                    box-sizing:border-box;
+                "
+            >
+
+<small style="color:#64748B;">
+    Example: 1.2.826.0.1.3680043.8.498.100048732290990538690933
+</small>
+
+
+            <!-- SAVE BUTTON -->
+
+            <button
+                id="savePatientDetails"
+                style="
+                    width: 100%;
+                    padding: 12px;
+                    background: #2563EB;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    cursor: pointer;
+                "
+            >
+                Save Patient Details
+            </button>
+
+
+            <!-- AI BUTTON WILL APPEAR HERE -->
+
+            <div id="aiButtonContainer"></div>
+
         </div>
 
     `;
@@ -336,13 +446,245 @@ function showUploadedFile(
         document.querySelector('.hero-buttons');
 
 
-    if (heroButtons) {
+    if (heroButtons) { 
 
-        heroButtons.parentNode.insertBefore(
-            fileInfo,
-            heroButtons.nextSibling
-        );
+    heroButtons.parentNode.insertBefore( 
+        fileInfo, 
+        heroButtons.nextSibling 
+    ); 
 
-    }
+}
+
+
+// =====================================
+// SAVE PATIENT DETAILS
+// =====================================
+
+const savePatientDetails =
+    document.getElementById(
+        'savePatientDetails'
+    );
+
+
+if (savePatientDetails) {
+
+    savePatientDetails.addEventListener(
+        'click',
+        function () {
+
+
+            // Get patient information
+
+            const patientName =
+                document
+                    .getElementById('patientName')
+                    .value
+                    .trim();
+
+
+            const operationDate =
+                document
+                    .getElementById('operationDate')
+                    .value;
+
+
+            const studyInstanceUID =
+                document
+                    .getElementById('studyInstanceUID')
+                    .value
+                    .trim();
+
+            const studyUIDPattern = /^[0-9]+(\.[0-9]+)+$/;
+
+                if (!studyInstanceUID) {
+                    showNotification(
+                        'Please enter the StudyInstanceUID.',
+                        'error'
+                    );
+                    return;
+                }
+
+                if (
+                    !studyUIDPattern.test(studyInstanceUID) ||
+                    studyInstanceUID.length > 64
+                ) {
+                    showNotification(
+                        'Please enter a valid StudyInstanceUID in DICOM format.',
+                        'error'
+                    );
+                    return;
+                }
+
+            // =================================
+            // VALIDATE PATIENT NAME
+            // =================================
+
+            if (!patientName) {
+
+                showNotification(
+                    'Please enter the patient name.',
+                    'error'
+                );
+
+                return;
+            }
+
+
+            // =================================
+            // VALIDATE OPERATION DATE
+            // =================================
+
+            if (!operationDate) {
+
+                showNotification(
+                    'Please enter the date of operation.',
+                    'error'
+                );
+
+                return;
+            }
+
+
+            const today =
+                new Date().toISOString().split('T')[0];
+
+
+            if (operationDate > today) {
+
+                showNotification(
+                    'Date of operation cannot be a future date.',
+                    'error'
+                );
+
+                return;
+            }
+
+
+            // =================================
+            // VALIDATE STUDY INSTANCE UID
+            // =================================
+
+            if (!studyInstanceUID) {
+
+                showNotification(
+                    'Please enter the StudyInstanceUID.',
+                    'error'
+                );
+
+                return;
+            }
+
+
+            // =================================
+            // SAVE DATA
+            // =================================
+
+            sessionStorage.setItem(
+                'patientName',
+                patientName
+            );
+
+            sessionStorage.setItem(
+                'operationDate',
+                operationDate
+            );
+
+            sessionStorage.setItem(
+                'studyInstanceUID',
+                studyInstanceUID
+            );
+
+            // Save CT file information
+
+            sessionStorage.setItem(
+                'ctFileName',
+                file.name
+            );
+
+            sessionStorage.setItem(
+                'ctFileSize',
+                file.size
+            );
+
+            sessionStorage.setItem(
+                'ctFileType',
+                fileType
+            );
+
+
+            // =================================
+            // SHOW SUCCESS
+            // =================================
+
+            savePatientDetails.textContent =
+                '✓ Patient Details Saved';
+
+            savePatientDetails.style.background =
+                '#16A34A';
+
+
+            // =================================
+            // CREATE AI BUTTON
+            // =================================
+
+            const aiButtonContainer =
+                document.getElementById(
+                    'aiButtonContainer'
+                );
+
+
+            aiButtonContainer.innerHTML = `
+
+                <button
+                    id="readyAIButton"
+                    style="
+                        width: 100%;
+                        margin-top: 12px;
+                        padding: 13px;
+                        background: #2563EB;
+                        color: white;
+                        border: none;
+                        border-radius: 8px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        cursor: pointer;
+                    "
+                >
+                    Ready for AI Analysis
+                </button>
+
+            `;
+
+
+            // =================================
+            // READY FOR AI ANALYSIS
+            // =================================
+
+            const readyAIButton =
+                document.getElementById(
+                    'readyAIButton'
+                );
+
+
+            readyAIButton.addEventListener(
+                'click',
+                function () {
+
+                    window.location.href =
+                        'ai-results.html';
+
+                }
+            );
+
+
+            showNotification(
+                'Patient details saved successfully!',
+                'success'
+            );
+
+        }
+    );
+
+}
 
 }

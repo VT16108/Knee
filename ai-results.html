@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MediScan AI - Analysis Results</title>
+
+    <link rel="stylesheet" href="ai-results.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="results-header">
+
+        <div class="logo">
+            MediScan AI
+        </div>
+
+        <div class="analysis-status">
+            AI Analysis Results
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="results-container">
+
+
+        <!-- FILE INFORMATION -->
+        <section class="file-section">
+
+            <div>
+                <span class="status-dot"></span>
+
+                <strong>CT Scan Analysis</strong>
+            </div>
+
+            <p id="fileName">
+                Analyzing uploaded scan...
+            </p>
+
+        </section>
+
+
+
+        <!-- ANALYSIS RESULT -->
+        <section class="disease-section">
+
+            <div class="section-heading">
+
+                <span class="icon">🔍</span>
+
+                <div>
+                    <h1>AI Analysis</h1>
+
+                    <p>
+                        Analysis of the uploaded CT scan
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Disease/condition -->
+            <div class="disease-card">
+
+                <span class="result-label">
+                    Detected Condition
+                </span>
+
+                <h2>
+                    Knee Joint Abnormality
+                </h2>
+
+                <p>
+                    The AI analysis has identified findings
+                    that may require further evaluation by
+                    a qualified medical professional.
+                </p>
+
+                <div class="confidence">
+                    AI Analysis Status: Preliminary
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SOLUTIONS -->
+        <section class="solutions-section">
+
+            <h2>Recommended Next Steps</h2>
+
+            <p class="section-description">
+                Based on the analysis, these are general
+                recommendations for discussing your condition
+                with a healthcare professional.
+            </p>
+
+
+            <div class="solutions-grid">
+
+                <div class="solution-card">
+
+                    <div class="solution-icon">
+                        🩺
+                    </div>
+
+                    <h3>
+                        Medical Consultation
+                    </h3>
+
+                    <p>
+                        Consult an orthopedic specialist
+                        for a detailed clinical evaluation.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-card">
+
+                    <div class="solution-icon">
+                        📋
+                    </div>
+
+                    <h3>
+                        Further Evaluation
+                    </h3>
+
+                    <p>
+                        Your doctor may recommend additional
+                        tests or imaging based on your symptoms.
+                    </p>
+
+                </div>
+
+
+                <div class="solution-card">
+
+                    <div class="solution-icon">
+                        🧘
+                    </div>
+
+                    <h3>
+                        Follow Medical Advice
+                    </h3>
+
+                    <p>
+                        Follow the treatment and activity
+                        recommendations provided by your doctor.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- DOCTORS -->
+        <section class="doctors-section">
+
+            <div class="section-heading">
+
+                <span class="icon">👨‍⚕️</span>
+
+                <div>
+
+                    <h2>
+                        Recommended Doctors
+                    </h2>
+
+                    <p>
+                        Specialists who can evaluate your condition
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="doctors-grid">
+
+
+                <!-- DOCTOR 1 -->
+                <div class="doctor-card"
+                     onclick="showDoctor('doctor1')">
+
+                    <div class="doctor-avatar">
+                        👨‍⚕️
+                    </div>
+
+                    <div class="doctor-info">
+
+                        <h3>
+                            Dr. Rahul Sharma
+                        </h3>
+
+                        <p>
+                            Orthopedic Specialist
+                        </p>
+
+                        <span>
+                            12+ Years Experience
+                        </span>
+
+                    </div>
+
+                    <button>
+                        View Details
+                    </button>
+
+                </div>
+
+
+
+                <!-- DOCTOR 2 -->
+                <div class="doctor-card"
+                     onclick="showDoctor('doctor2')">
+
+                    <div class="doctor-avatar">
+                        👩‍⚕️
+                    </div>
+
+                    <div class="doctor-info">
+
+                        <h3>
+                            Dr. Priya Mehta
+                        </h3>
+
+                        <p>
+                            Orthopedic Surgeon
+                        </p>
+
+                        <span>
+                            10+ Years Experience
+                        </span>
+
+                    </div>
+
+                    <button>
+                        View Details
+                    </button>
+
+                </div>
+
+
+
+                <!-- DOCTOR 3 -->
+                <div class="doctor-card"
+                     onclick="showDoctor('doctor3')">
+
+                    <div class="doctor-avatar">
+                        👨‍⚕️
+                    </div>
+
+                    <div class="doctor-info">
+
+                        <h3>
+                            Dr. Arjun Verma
+                        </h3>
+
+                        <p>
+                            Joint Replacement Specialist
+                        </p>
+
+                        <span>
+                            15+ Years Experience
+                        </span>
+
+                    </div>
+
+                    <button>
+                        View Details
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- DOCTOR DETAILS MODAL -->
+    <div id="doctorModal" class="doctor-modal">
+
+        <div class="doctor-modal-content">
+
+            <button class="close-modal"
+                    onclick="closeDoctor()">
+                ×
+            </button>
+
+            <div id="doctorDetails">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="ai-results.js"></script>
+
+</body>
+
+</html>
