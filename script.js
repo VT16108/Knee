@@ -688,3 +688,54 @@ if (savePatientDetails) {
 }
 
 }
+// =========================================
+// OVERALL KNEE HEALTH
+// =========================================
+
+const kneeHealthBtn = document.getElementById("kneeHealthBtn");
+const kneeHealthPanel = document.getElementById("kneeHealthPanel");
+const closeKneeHealth = document.getElementById("closeKneeHealth");
+
+if (kneeHealthBtn) {
+    kneeHealthBtn.addEventListener("click", function () {
+
+        kneeHealthPanel.classList.add("active");
+
+        // Demo data for frontend
+        document.getElementById("overallScore").textContent = "85";
+
+        document.getElementById("overallHealthStatus").textContent =
+            "Overall knee assessment is currently in the healthy range based on the available analysis.";
+
+        document.getElementById("boneStatus").textContent = "Normal";
+        document.getElementById("boneDetails").textContent =
+            "No significant abnormality detected in the assessed bone structures.";
+
+        document.getElementById("cartilageStatus").textContent = "Good";
+        document.getElementById("cartilageDetails").textContent =
+            "Cartilage appears preserved in the assessed region.";
+
+        document.getElementById("ligamentStatus").textContent = "Normal";
+        document.getElementById("ligamentDetails").textContent =
+            "Major knee ligaments require AI/image analysis for detailed assessment.";
+
+        document.getElementById("meniscusStatus").textContent = "Normal";
+        document.getElementById("meniscusDetails").textContent =
+            "Menisci require image-based analysis for a detailed assessment.";
+
+        document.getElementById("tendonStatus").textContent = "Good";
+        document.getElementById("tendonDetails").textContent =
+            "Major knee tendons require image-based analysis.";
+
+        document.getElementById("tissueStatus").textContent = "Normal";
+        document.getElementById("tissueDetails").textContent =
+            "Joint space and surrounding tissues require detailed image analysis.";
+    });
+}
+
+
+if (closeKneeHealth) {
+    closeKneeHealth.addEventListener("click", function () {
+        kneeHealthPanel.classList.remove("active");
+    });
+}

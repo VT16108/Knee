@@ -575,6 +575,204 @@ body {
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
+/* ================================
+   OVERALL KNEE HEALTH
+================================ */
+
+.knee-health-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    padding: 28px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.knee-health-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+.knee-health-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.knee-health-card h3 {
+    margin: 10px 0;
+    color: #0f172a;
+    font-size: 22px;
+}
+
+.knee-health-card p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.knee-health-btn {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.knee-health-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* ================================
+   HEALTH DETAILS PANEL
+================================ */
+
+.knee-health-panel {
+    display: none;
+    margin-top: 25px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.knee-health-panel.active {
+    display: block;
+}
+
+.knee-health-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 18px;
+    margin-bottom: 25px;
+}
+
+.knee-health-header h2 {
+    margin: 0;
+    color: #0f172a;
+}
+
+.knee-health-header p {
+    margin: 6px 0 0;
+    color: #64748b;
+}
+
+.close-knee-health {
+    border: none;
+    background: #f1f5f9;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 25px;
+    cursor: pointer;
+    color: #334155;
+}
+
+
+/* OVERALL SCORE */
+
+.overall-health-score {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 22px;
+    background: #eff6ff;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.health-score-circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 8px solid #2563eb;
+    flex-shrink: 0;
+}
+
+.health-score-circle span {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.health-score-circle small {
+    color: #64748b;
+}
+
+.overall-health-score h3 {
+    margin: 0 0 8px;
+    color: #0f172a;
+}
+
+.overall-health-score p {
+    margin: 0;
+    color: #475569;
+}
+
+
+/* STRUCTURE CARDS */
+
+.knee-structures {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.structure-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px;
+    background: white;
+}
+
+.structure-card h3 {
+    margin: 0 0 10px;
+    color: #0f172a;
+}
+
+.structure-card p {
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .knee-structures {
+        grid-template-columns: 1fr;
+    }
+
+    .overall-health-score {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 
 .feature-card:hover {
     transform: translateY(-7px);

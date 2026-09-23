@@ -97,6 +97,102 @@
                 <h3 class="feature-title">Live Wait Times</h3>
                 <p class="feature-description">Check doctor availability and book appointments instantly.</p>
             </div>
+            <!-- OVERALL KNEE HEALTH BLOCK -->
+            <div class="knee-health-card" id="kneeHealthCard">
+                <div class="knee-health-icon">🦵</div>
+
+                <h3>Overall Knee Health</h3>
+
+                <p>
+                    Get a complete overview of your knee structures,
+                    including bones, ligaments, cartilage and tissues.
+                </p>
+
+                <button class="knee-health-btn" id="kneeHealthBtn">
+                    View Knee Health
+                </button>
+            </div>
+
+            <!-- KNEE HEALTH DETAILS -->
+            <div class="knee-health-panel" id="kneeHealthPanel">
+
+                <div class="knee-health-header">
+                    <div>
+                        <h2>Overall Knee Health</h2>
+                        <p>Detailed overview of your knee structures</p>
+                    </div>
+
+                    <button id="closeKneeHealth" class="close-knee-health">
+                        ×
+                    </button>
+                </div>
+
+                <div class="overall-health-score">
+                    <div class="health-score-circle">
+                        <span id="overallScore">--</span>
+                        <small>/100</small>
+                    </div>
+
+                    <div>
+                        <h3>Overall Knee Health Score</h3>
+                        <p id="overallHealthStatus">
+                            Analysis will appear here after AI analysis.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="knee-structures">
+
+                    <div class="structure-card">
+                        <h3>🦴 Bones</h3>
+                        <span class="status" id="boneStatus">Not analyzed</span>
+                        <p id="boneDetails">
+                            Femur, tibia and patella assessment.
+                        </p>
+                    </div>
+
+                    <div class="structure-card">
+                        <h3>🧩 Cartilage</h3>
+                        <span class="status" id="cartilageStatus">Not analyzed</span>
+                        <p id="cartilageDetails">
+                            Assessment of cartilage condition.
+                        </p>
+                    </div>
+
+                    <div class="structure-card">
+                        <h3>🔗 Ligaments</h3>
+                        <span class="status" id="ligamentStatus">Not analyzed</span>
+                        <p id="ligamentDetails">
+                            ACL, PCL, MCL and LCL assessment.
+                        </p>
+                    </div>
+
+                    <div class="structure-card">
+                        <h3>◈ Menisci</h3>
+                        <span class="status" id="meniscusStatus">Not analyzed</span>
+                        <p id="meniscusDetails">
+                            Medial and lateral meniscus assessment.
+                        </p>
+                    </div>
+
+                    <div class="structure-card">
+                        <h3>🧵 Tendons</h3>
+                        <span class="status" id="tendonStatus">Not analyzed</span>
+                        <p id="tendonDetails">
+                            Assessment of major knee tendons.
+                        </p>
+                    </div>
+
+                    <div class="structure-card">
+                        <h3>💧 Joint & Tissues</h3>
+                        <span class="status" id="tissueStatus">Not analyzed</span>
+                        <p id="tissueDetails">
+                            Joint space and surrounding tissue assessment.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
         </section>
     </main>
 
