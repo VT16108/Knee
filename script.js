@@ -692,44 +692,48 @@ if (savePatientDetails) {
 // OVERALL KNEE HEALTH
 // =========================================
 
-const kneeHealthBtn = document.getElementById("kneeHealthBtn");
+const kneeHealthCard = document.getElementById("kneeHealthCard");
 const kneeHealthPanel = document.getElementById("kneeHealthPanel");
 const closeKneeHealth = document.getElementById("closeKneeHealth");
 
-if (kneeHealthBtn) {
-    kneeHealthBtn.addEventListener("click", function () {
+if (kneeHealthCard) {
+    kneeHealthCard.addEventListener("click", function () {
 
         kneeHealthPanel.classList.add("active");
 
-        // Demo data for frontend
-        document.getElementById("overallScore").textContent = "85";
-
+        // Overall knee health
         document.getElementById("overallHealthStatus").textContent =
-            "Overall knee assessment is currently in the healthy range based on the available analysis.";
+            "The knee structures appear generally healthy, with no major abnormalities detected in this demo analysis.";
 
-        document.getElementById("boneStatus").textContent = "Normal";
+        // Bones
+        document.getElementById("boneStatus").textContent = "Healthy";
         document.getElementById("boneDetails").textContent =
-            "No significant abnormality detected in the assessed bone structures.";
+            "Femur, tibia and patella appear structurally normal with no significant abnormalities detected.";
 
-        document.getElementById("cartilageStatus").textContent = "Good";
+        // Cartilage
+        document.getElementById("cartilageStatus").textContent = "Healthy";
         document.getElementById("cartilageDetails").textContent =
-            "Cartilage appears preserved in the assessed region.";
+            "Cartilage appears well preserved with no significant signs of degeneration in this demo analysis.";
 
-        document.getElementById("ligamentStatus").textContent = "Normal";
+        // Ligaments
+        document.getElementById("ligamentStatus").textContent = "Healthy";
         document.getElementById("ligamentDetails").textContent =
-            "Major knee ligaments require AI/image analysis for detailed assessment.";
+            "ACL, PCL, MCL and LCL appear intact with no obvious signs of major injury.";
 
-        document.getElementById("meniscusStatus").textContent = "Normal";
+        // Menisci
+        document.getElementById("meniscusStatus").textContent = "Healthy";
         document.getElementById("meniscusDetails").textContent =
-            "Menisci require image-based analysis for a detailed assessment.";
+            "Medial and lateral menisci appear normal with no obvious tear detected in this demo analysis.";
 
-        document.getElementById("tendonStatus").textContent = "Good";
+        // Tendons
+        document.getElementById("tendonStatus").textContent = "Healthy";
         document.getElementById("tendonDetails").textContent =
-            "Major knee tendons require image-based analysis.";
+            "Major knee tendons appear intact without significant abnormalities.";
 
-        document.getElementById("tissueStatus").textContent = "Normal";
+        // Joint and surrounding tissues
+        document.getElementById("tissueStatus").textContent = "Healthy";
         document.getElementById("tissueDetails").textContent =
-            "Joint space and surrounding tissues require detailed image analysis.";
+            "Joint space and surrounding soft tissues appear normal with no significant abnormality detected.";
     });
 }
 

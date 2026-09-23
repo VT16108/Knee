@@ -688,7 +688,7 @@ body {
     margin-bottom: 25px;
 }
 
-.health-score-circle {
+/* .health-score-circle {
     width: 110px;
     height: 110px;
     border-radius: 50%;
@@ -719,10 +719,27 @@ body {
 .overall-health-score p {
     margin: 0;
     color: #475569;
-}
+} */
 
 
 /* STRUCTURE CARDS */
+.overall-health-summary {
+    padding: 22px;
+    background: #eff6ff;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.overall-health-summary h3 {
+    margin: 0 0 8px;
+    color: #0f172a;
+}
+
+.overall-health-summary p {
+    margin: 0;
+    color: #475569;
+    line-height: 1.6;
+}
 
 .knee-structures {
     display: grid;
